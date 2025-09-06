@@ -4,7 +4,7 @@ A minimal Python package implementing Stein Variational Gradient Descent (SVGD).
 
 ## Installation (TestPyPI)
 ```bash
-pip install -i https://test.pypi.org/simple/ simple-stein-svgd
+!pip install --extra-index-url https://pypi.org/simple/ -i https://test.pypi.org/simple/ simple-stein-svgd
 ```
 
 ## Example:
