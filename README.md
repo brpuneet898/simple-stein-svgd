@@ -18,8 +18,12 @@ def log_prob(x):
 
 particles = np.random.randn(100, 1)
 svgd = SVGD(log_prob)
-for _ in range(100):
-    particles = svgd.update(particles, stepsize=0.05)
+
+for t in range(100):
+    res = svgd.update(particles, stepsize=0.05)
+    particles = res.particles
+    if (t + 1) % 10 == 0:
+        print(f"iter {t+1:3d} | KSD={res.ksd:.5f} | wall-time={res.wall_time*1e3:.2f} ms")
 
 print("Mean:", np.mean(particles))
 print("Variance:", np.var(particles))
