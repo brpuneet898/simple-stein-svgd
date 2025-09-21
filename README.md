@@ -28,3 +28,13 @@ for t in range(100):
 print("Mean:", np.mean(particles))
 print("Variance:", np.var(particles))
 ```
+
+## Example - How to use Kernels?
+
+```python
+from simple_stein_svgd import SVGD, bandwidth_scott
+
+svgd = SVGD(log_prob, kernel="rbf", bandwidth_rule=bandwidth_scott)
+svgd = SVGD(log_prob, kernel="imq")     # default alpha=median trick, beta=0.5
+svgd = SVGD(log_prob, kernel="linear")  # no bandwidth
+```
